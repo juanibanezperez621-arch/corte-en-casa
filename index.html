@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corte en Casa · Máquinas, recortadoras y cuidado de barba comparados</title>
+<meta name="description" content="Guía para elegir máquina de cortar pelo, recortadora de barba y productos de afeitado. Compara modelos lado a lado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tile:#DDE7E1;      /* azulejo verde agua de barbería clásica */
+  --tile-line:#C4D3CB;
+  --ink:#1D2326;
+  --steel:#4A5761;
+  --leather:#6E1F26;   /* cuero granate del sillón */
+  --paper:#FAFBF9;
+  --chrome:#B7C1C7;
+  --font:"Archivo", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;font-family:var(--font);font-stretch:100%;color:var(--ink);background:var(--paper);line-height:1.55;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--leather);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* cabecera */
+header.top{background:var(--paper);border-bottom:1px solid var(--tile-line);position:sticky;top:0;z-index:20}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-stretch:75%;font-size:24px;letter-spacing:.01em}
+.logo .pole{width:12px;height:30px;border-radius:6px;background:repeating-linear-gradient(135deg,var(--leather) 0 6px,#fff 6px 12px,var(--steel) 12px 18px,#fff 18px 24px);box-shadow:inset 0 0 0 1px var(--ink)}
+nav a{text-decoration:none;margin-left:22px;font-weight:600;font-size:15px}
+nav a:hover{color:var(--leather)}
+.count{display:inline-block;min-width:22px;padding:0 6px;margin-left:4px;border-radius:11px;background:var(--leather);color:#fff;font-size:13px;text-align:center}
+
+/* portada: azulejo */
+.hero{background-color:var(--tile);background-image:linear-gradient(var(--tile-line) 1px,transparent 1px),linear-gradient(90deg,var(--tile-line) 1px,transparent 1px);background-size:56px 56px;border-bottom:1px solid var(--tile-line);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 150px;gap:40px;align-items:stretch;padding-top:72px;padding-bottom:72px}
+.hero h1{font-stretch:62%;font-weight:900;font-size:clamp(52px,9vw,112px);line-height:.9;margin:0 0 24px;letter-spacing:-.005em;max-width:11ch}
+.hero p{font-size:19px;max-width:52ch;margin:0 0 28px;color:var(--steel)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:4px;font-weight:700;text-decoration:none;font-size:16px;border:2px solid var(--ink);cursor:pointer;font-family:inherit;background:transparent;color:var(--ink)}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--leather);border-color:var(--leather)}
+.btn:hover{border-color:var(--leather)}
+.bigpole{border-radius:75px;border:3px solid var(--ink);background:repeating-linear-gradient(160deg,var(--leather) 0 26px,#fff 26px 52px,var(--steel) 52px 78px,#fff 78px 104px);background-size:100% 208px;animation:spin 6s linear infinite;min-height:360px;position:relative}
+.bigpole::before,.bigpole::after{content:"";position:absolute;left:-10px;right:-10px;height:22px;background:var(--chrome);border:3px solid var(--ink);border-radius:8px}
+.bigpole::before{top:-14px}.bigpole::after{bottom:-14px}
+@keyframes spin{to{background-position:0 208px}}
+
+section{padding:80px 0}
+h2{font-stretch:75%;font-weight:800;font-size:44px;line-height:1.05;margin:0 0 12px}
+.lead{color:var(--steel);max-width:60ch;margin:0 0 32px;font-size:18px}
+
+/* productos */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.chip{font:inherit;font-size:15px;font-weight:600;padding:8px 16px;border-radius:20px;border:1.5px solid var(--tile-line);background:#fff;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--tile-line);border-radius:6px;display:flex;flex-direction:column;overflow:hidden}
+.card .img{aspect-ratio:4/3;background:var(--tile);display:grid;place-items:center;border-bottom:1px solid var(--tile-line);position:relative}
+.card .img img{width:100%;height:100%;object-fit:contain;background:#fff}
+.card .img svg{width:76px;height:76px;stroke:var(--steel)}
+.sample{position:absolute;top:10px;left:10px;font-size:12px;font-weight:700;background:#fff;border:1px solid var(--tile-line);padding:2px 8px;border-radius:3px;color:var(--steel)}
+.card .body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cat{font-size:13px;color:var(--steel);font-weight:600}
+.card h3{margin:0;font-size:19px;line-height:1.2;font-stretch:87%;font-weight:750}
+.card ul{margin:2px 0 0;padding-left:18px;font-size:15px;color:var(--steel)}
+.price{font-size:24px;font-weight:800;font-stretch:75%;margin-top:auto;padding-top:8px}
+.stars{color:var(--leather);font-size:15px;letter-spacing:1px}
+.card .actions{display:flex;gap:8px;padding:0 18px 18px}
+.card .actions .btn{flex:1;text-align:center;padding:10px 8px;font-size:14px;white-space:nowrap}
+.cmp-toggle[aria-pressed="true"]{background:var(--tile);border-color:var(--steel)}
+
+/* comparador */
+#comparador{background:var(--tile);border-top:1px solid var(--tile-line)}
+.pickers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.pickers label{font-size:14px;font-weight:600;color:var(--steel);display:block;margin-bottom:4px}
+select{width:100%;font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid var(--tile-line);border-radius:4px;background:#fff;color:var(--ink)}
+.table-wrap{overflow-x:auto;background:#fff;border:1px solid var(--tile-line);border-radius:6px}
+table{border-collapse:collapse;width:100%;min-width:620px}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--tile-line);vertical-align:top;font-size:16px}
+thead th{font-stretch:87%;font-size:18px;font-weight:750;background:var(--paper)}
+tbody th{font-weight:600;color:var(--steel);width:22%;font-size:15px}
+td.best{background:#EEF4F0;font-weight:700}
+td.best::after{content:" ✓";color:var(--leather)}
+tr:last-child th,tr:last-child td{border-bottom:0}
+.empty{padding:40px;text-align:center;color:var(--steel)}
+.note{font-size:14px;color:var(--steel);margin-top:12px}
+
+footer{background:var(--ink);color:#C9D1D6;padding:40px 0;font-size:14px}
+footer p{max-width:70ch;margin:0 0 10px}
+footer strong{color:#fff}
+
+@media (max-width:800px){
+  .hero .wrap{grid-template-columns:1fr;padding-top:48px;padding-bottom:48px}
+  .bigpole{display:none}
+  nav a{margin-left:14px;font-size:14px}
+  nav a.hide-sm{display:none}
+  .pickers{grid-template-columns:1fr}
+  h2{font-size:36px}
+  section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#"><span class="pole" aria-hidden="true"></span>Corte en Casa</a>
+    <nav aria-label="Principal">
+      <a href="#productos">Productos</a>
+      <a href="#comparador">Comparador <span class="count" id="navCount">0</span></a>
+      <a class="hide-sm" href="#aviso">Cómo elegimos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Qué máquina comprar para cortarte el pelo en casa</h1>
+        <p>Cortapelos, recortadoras de barba y productos de afeitado probados y comparados, con lo que importa de verdad: autonomía, cuchillas, peines y precio.</p>
+        <div class="btns">
+          <a class="btn primary" href="#productos">Ver productos</a>
+          <a class="btn" href="#comparador">Comparar modelos</a>
+        </div>
+      </div>
+      <div class="bigpole" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <section id="productos">
+    <div class="wrap">
+      <h2>Productos recomendados</h2>
+      <p class="lead">Marca hasta tres productos con «Comparar» y míralos lado a lado en el comparador.</p>
+      <div class="filters" role="group" aria-label="Filtrar por categoría" id="filters"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section id="comparador">
+    <div class="wrap">
+      <h2>Comparador</h2>
+      <p class="lead">Elige hasta tres productos. Marcamos con ✓ el mejor valor de cada fila.</p>
+      <div class="pickers" id="pickers"></div>
+      <div class="table-wrap" id="tableWrap"></div>
+      <p class="note">Los precios de Amazon cambian a menudo; el precio final es el que veas en Amazon al comprar.</p>
+    </div>
+  </section>
+</main>
+
+<footer id="aviso">
+  <div class="wrap">
+    <p><strong>Corte en Casa</strong> recomienda productos que nos parecen buenas compras por su relación calidad-precio.</p>
+    <p>Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Si compras desde nuestros enlaces, a ti no te cuesta más.</p>
+    <p>© <span id="year"></span> Corte en Casa</p>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   PRODUCTOS — edita solo esta lista.
+   Para cada producto:
+   - nombre, categoria, precio (€), valoracion (0-5)
+   - imagen: URL de la foto (déjala "" para usar el icono)
+   - enlace: tu enlace de afiliado de Amazon
+   - puntos: 2-3 ventajas cortas
+   - specs: lo que sale en el comparador
+   - ejemplo: true = muestra la etiqueta «Ejemplo» (pon false en los reales)
+   ============================================================ */
+const PRODUCTOS = [
+  {id:"ej1", ejemplo:true, nombre:"Cortapelos inalámbrico (ejemplo A)", categoria:"Cortapelos", precio:49.99, valoracion:4.5, imagen:"", enlace:"#",
+   puntos:["Cuchillas de acero","8 peines guía","Base de carga"],
+   specs:{autonomia:120, carga:90, peines:8, agua:"No", peso:320, garantia:2}},
+  {id:"ej2", ejemplo:true, nombre:"Cortapelos profesional (ejemplo B)", categoria:"Cortapelos", precio:89.99, valoracion:4.7, imagen:"", enlace:"#",
+   puntos:["Motor potente","Ajuste de cuchilla","Uso con y sin cable"],
+   specs:{autonomia:90, carga:120, peines:8, agua:"No", peso:410, garantia:2}},
+  {id:"ej3", ejemplo:true, nombre:"Recortadora de barba (ejemplo C)", categoria:"Barba", precio:34.99, valoracion:4.4, imagen:"", enlace:"#",
+   puntos:["20 longitudes","Lavable","Carga rápida"],
+   specs:{autonomia:80, carga:60, peines:2, agua:"Sí", peso:150, garantia:2}},
+  {id:"ej4", ejemplo:true, nombre:"Recortadora multiuso 9 en 1 (ejemplo D)", categoria:"Barba", precio:44.99, valoracion:4.3, imagen:"", enlace:"#",
+   puntos:["Cabezales para nariz y cuerpo","Estuche","Resistente al agua"],
+   specs:{autonomia:100, carga:75, peines:6, agua:"Sí", peso:180, garantia:2}},
+  {id:"ej5", ejemplo:true, nombre:"Afeitadora de láminas (ejemplo E)", categoria:"Afeitado", precio:69.99, valoracion:4.2, imagen:"", enlace:"#",
+   puntos:["Afeitado en seco y mojado","Láminas flotantes"],
+   specs:{autonomia:50, carga:60, peines:0, agua:"Sí", peso:170, garantia:2}},
+  {id:"ej6", ejemplo:true, nombre:"Kit de cuidado de barba (ejemplo F)", categoria:"Cuidado", precio:24.99, valoracion:4.6, imagen:"", enlace:"#",
+   puntos:["Aceite, bálsamo y peine","Ideal para regalo"],
+   specs:{autonomia:null, carga:null, peines:null, agua:"—", peso:250, garantia:null}},
+];
+
+/* Filas del comparador. mejor: "max" = gana el número más alto, "min" = el más bajo */
+const FILAS = [
+  {k:"precio", t:"Precio", f:p=>fmt(p.precio), v:p=>p.precio, mejor:"min"},
+  {k:"valoracion", t:"Valoración", f:p=>p.valoracion+" / 5", v:p=>p.valoracion, mejor:"max"},
+  {k:"categoria", t:"Tipo", f:p=>p.categoria},
+  {k:"autonomia", t:"Autonomía", f:p=>s(p,"autonomia")==null?"—":s(p,"autonomia")+" min", v:p=>s(p,"autonomia"), mejor:"max"},
+  {k:"carga", t:"Tiempo de carga", f:p=>s(p,"carga")==null?"—":s(p,"carga")+" min", v:p=>s(p,"carga"), mejor:"min"},
+  {k:"peines", t:"Peines guía", f:p=>s(p,"peines")==null?"—":s(p,"peines"), v:p=>s(p,"peines"), mejor:"max"},
+  {k:"agua", t:"Resistente al agua", f:p=>s(p,"agua")??"—"},
+  {k:"peso", t:"Peso", f:p=>s(p,"peso")==null?"—":s(p,"peso")+" g", v:p=>s(p,"peso"), mejor:"min"},
+  {k:"garantia", t:"Garantía", f:p=>s(p,"garantia")==null?"—":s(p,"garantia")+" años", v:p=>s(p,"garantia"), mejor:"max"},
+];
+
+const ICONOS = {
+  Cortapelos:'<svg viewBox="0 0 64 64" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="14" width="20" height="44" rx="9"/><path d="M20 14h24l-3-8H23z"/><path d="M26 6v-2M32 6v-2M38 6v-2"/><circle cx="32" cy="30" r="3"/></svg>',
+  Barba:'<svg viewBox="0 0 64 64" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 22c0 20 8 34 18 34s18-14 18-34"/><path d="M22 34c4 3 16 3 20 0"/><path d="M14 22c4-8 12-12 18-12s14 4 18 12"/></svg>',
+  Afeitado:'<svg viewBox="0 0 64 64" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="10" width="28" height="16" rx="4"/><path d="M24 26h16v6H24zM28 32h8v24h-8z"/></svg>',
+  Cuidado:'<svg viewBox="0 0 64 64" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M26 8h12v8H26z"/><path d="M24 16h16l4 10v28a4 4 0 0 1-4 4H24a4 4 0 0 1-4-4V26z"/><path d="M26 36h12"/></svg>',
+};
+
+const MAX = 3;
+let filtro = "Todos";
+let seleccion = [];
+
+function s(p,k){return p.specs ? p.specs[k] : null}
+function fmt(n){return n.toLocaleString("es-ES",{style:"currency",currency:"EUR"})}
+function estrellas(v){const l=Math.round(v);return "★".repeat(l)+"☆".repeat(5-l)}
+function byId(id){return PRODUCTOS.find(p=>p.id===id)}
+function esc(t){return String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+function pintarFiltros(){
+  const cats = ["Todos", ...new Set(PRODUCTOS.map(p=>p.categoria))];
+  document.getElementById("filters").innerHTML = cats.map(c=>
+    `<button class="chip" type="button" aria-pressed="${c===filtro}" data-cat="${esc(c)}">${esc(c)}</button>`).join("");
+}
+
+function pintarProductos(){
+  const lista = PRODUCTOS.filter(p=>filtro==="Todos"||p.categoria===filtro);
+  document.getElementById("grid").innerHTML = lista.map(p=>{
+    const on = seleccion.includes(p.id);
+    const img = p.imagen ? `<img src="${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy">` : (ICONOS[p.categoria]||ICONOS.Cuidado);
+    return `<article class="card">
+      <div class="img">${img}${p.ejemplo?'<span class="sample">Ejemplo</span>':''}</div>
+      <div class="body">
+        <span class="cat">${esc(p.categoria)}</span>
+        <h3>${esc(p.nombre)}</h3>
+        <span class="stars" aria-label="Valoración ${p.valoracion} de 5">${estrellas(p.valoracion)} <span style="color:var(--steel)">${p.valoracion}</span></span>
+        <ul>${p.puntos.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+        <div class="price">${fmt(p.precio)}</div>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="${esc(p.enlace)}" target="_blank" rel="nofollow sponsored noopener">Ver en Amazon</a>
+        <button class="btn cmp-toggle" type="button" aria-pressed="${on}" data-id="${p.id}">${on?"Quitar":"Comparar"}</button>
+      </div>
+    </article>`;
+  }).join("");
+}
+
+function pintarPickers(){
+  const opts = id => `<option value="">— Elige un producto —</option>` + PRODUCTOS.map(p=>
+    `<option value="${p.id}" ${p.id===id?"selected":""}>${esc(p.nombre)}</option>`).join("");
+  document.getElementById("pickers").innerHTML = [0,1,2].map(i=>
+    `<div><label for="pick${i}">Producto ${i+1}</label><select id="pick${i}" data-i="${i}">${opts(seleccion[i])}</select></div>`).join("");
+}
+
+function pintarTabla(){
+  const ps = seleccion.map(byId).filter(Boolean);
+  const wrap = document.getElementById("tableWrap");
+  document.getElementById("navCount").textContent = ps.length;
+  if(ps.length===0){wrap.innerHTML=`<div class="empty">Pulsa «Comparar» en dos o tres productos, o elígelos arriba.</div>`;return;}
+  const head = `<thead><tr><th scope="col">Característica</th>${ps.map(p=>`<th scope="col">${esc(p.nombre)}</th>`).join("")}</tr></thead>`;
+  const body = FILAS.map(f=>{
+    let best = null;
+    if(f.mejor && ps.length>1){
+      const vals = ps.map(f.v).filter(v=>typeof v==="number");
+      if(vals.length>1){
+        const target = f.mejor==="max"?Math.max(...vals):Math.min(...vals);
+        if(vals.filter(v=>v===target).length < vals.length) best = target;
+      }
+    }
+    return `<tr><th scope="row">${f.t}</th>${ps.map(p=>`<td class="${best!==null&&f.v(p)===best?"best":""}">${esc(f.f(p))}</td>`).join("")}</tr>`;
+  }).join("");
+  const links = `<tr><th scope="row">Comprar</th>${ps.map(p=>`<td><a class="btn primary" style="padding:8px 14px;font-size:14px" href="${esc(p.enlace)}" target="_blank" rel="nofollow sponsored noopener">Ver en Amazon</a></td>`).join("")}</tr>`;
+  wrap.innerHTML = `<table>${head}<tbody>${body}${links}</tbody></table>`;
+}
+
+function render(){pintarFiltros();pintarProductos();pintarPickers();pintarTabla();}
+
+document.addEventListener("click",e=>{
+  const chip = e.target.closest(".chip");
+  if(chip){filtro = chip.dataset.cat; pintarFiltros(); pintarProductos(); return;}
+  const t = e.target.closest(".cmp-toggle");
+  if(t){
+    const id = t.dataset.id;
+    if(seleccion.includes(id)) seleccion = seleccion.filter(x=>x!==id);
+    else { if(seleccion.length>=MAX) seleccion.shift(); seleccion.push(id); }
+    pintarProductos(); pintarPickers(); pintarTabla();
+  }
+});
+document.addEventListener("change",e=>{
+  if(e.target.matches("#pickers select")){
+    const i = +e.target.dataset.i, v = e.target.value;
+    const arr = [0,1,2].map(j=>seleccion[j]||"");
+    arr[i] = v;
+    seleccion = arr.filter((x,j,a)=>x && a.indexOf(x)===j);
+    pintarProductos(); pintarPickers(); pintarTabla();
+  }
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+seleccion = ["ej1","ej2"];
+render();
+</script>
+</body>
+</html>
