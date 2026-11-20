@@ -258,33 +258,35 @@ footer strong{color:#fff}
    NO pongas precios ni estrellas de Amazon: sus normas no permiten
    mostrarlos copiados a mano.
    ============================================================ */
-const TAG_AMAZON = ""; // por ejemplo "cortecasa-21"
+const TAG_AMAZON = "67280c-21";
 
+/* Datos sacados de la ficha de cada producto en Amazon.es (20/11/2026).
+   null = el fabricante no lo indica → sale «—» en el comparador. */
 const PRODUCTOS = [
-  {id:"ej1", ejemplo:true, nombre:"Cortapelos inalámbrico (ejemplo A)", categoria:"Cortapelos", asin:"", imagen:"",
-   ideal:"Primer cortapelos para uso personal",
-   puntos:["Cuchillas de acero","8 peines guía","Base de carga"],
-   specs:{autonomia:120, carga:90, peines:8, agua:"No", peso:320, garantia:2}},
-  {id:"ej2", ejemplo:true, nombre:"Cortapelos profesional (ejemplo B)", categoria:"Cortapelos", asin:"", imagen:"",
-   ideal:"Degradados y cortes frecuentes",
-   puntos:["Motor potente","Ajuste de cuchilla","Uso con y sin cable"],
-   specs:{autonomia:90, carga:120, peines:8, agua:"No", peso:410, garantia:2}},
-  {id:"ej3", ejemplo:true, nombre:"Recortadora de barba (ejemplo C)", categoria:"Barba", asin:"", imagen:"",
-   ideal:"Mantener la barba a una longitud fija",
-   puntos:["20 longitudes","Lavable","Carga rápida"],
-   specs:{autonomia:80, carga:60, peines:2, agua:"Sí", peso:150, garantia:2}},
-  {id:"ej4", ejemplo:true, nombre:"Recortadora multiuso 9 en 1 (ejemplo D)", categoria:"Barba", asin:"", imagen:"",
+  {id:"remington-genius", nombre:"Remington Genius (máquina de cortar pelo)", categoria:"Cortapelos", asin:"B09RNBFS2C", imagen:"",
+   ideal:"Cortarte el pelo tú mismo con un kit completo",
+   puntos:["Cuchillas de cerámica autoafilables","10 peines guía (3-40 mm)","Con cable o batería; maletín con tijeras y capa"],
+   specs:{autonomia:50, carga:90, peines:10, longitudes:"0,8-40 mm", agua:null}},
+  {id:"cecotec-bamba", nombre:"Cecotec Bamba PrecisionCare Wet&Dry", categoria:"Cortapelos", asin:"B082DDM32Y", imagen:"",
+   ideal:"Mucha autonomía y poder lavarla bajo el grifo",
+   puntos:["Cuchilla de acero con titanio","8 peines (incluye uno de degradado)","Resistente al agua IPX6"],
+   specs:{autonomia:120, carga:null, peines:8, longitudes:"0,5-30 mm", agua:"Sí (IPX6)"}},
+  {id:"braun-bt7", nombre:"Braun Series 7 BT7525 (recortadora de barba)", categoria:"Barba", asin:"B0DQWYGX7M", imagen:"",
+   ideal:"Barba cuidada con la longitud exacta",
+   puntos:["40 ajustes de longitud cada 0,5 mm","Rueda de precisión PrecisionWheel","100 % resistente al agua"],
+   specs:{autonomia:120, carga:null, peines:null, longitudes:"40 ajustes (cada 0,5 mm)", agua:"Sí"}},
+  {id:"philips-aio3000", nombre:"Philips Todo en Uno Series 3000 (9 en 1)", categoria:"Barba", asin:"B0FDL1XP3J", imagen:"",
    ideal:"Un solo aparato para barba, nariz y cuerpo",
-   puntos:["Cabezales para nariz y cuerpo","Estuche","Resistente al agua"],
-   specs:{autonomia:100, carga:75, peines:6, agua:"Sí", peso:180, garantia:2}},
-  {id:"ej5", ejemplo:true, nombre:"Afeitadora de láminas (ejemplo E)", categoria:"Afeitado", asin:"", imagen:"",
-   ideal:"Afeitado apurado diario",
-   puntos:["Afeitado en seco y mojado","Láminas flotantes"],
-   specs:{autonomia:50, carga:60, peines:0, agua:"Sí", peso:170, garantia:2}},
-  {id:"ej6", ejemplo:true, nombre:"Kit de cuidado de barba (ejemplo F)", categoria:"Cuidado", asin:"", imagen:"",
-   ideal:"Regalo o cuidado de barbas largas",
-   puntos:["Aceite, bálsamo y peine","Ideal para regalo"],
-   specs:{autonomia:null, carga:null, peines:null, agua:"—", peso:250, garantia:null}},
+   puntos:["Cuchillas autoafilables sin lubricar","Peine ajustable 3-7 mm y peines de barba 1-2 mm","Carga por USB"],
+   specs:{autonomia:90, carga:null, peines:null, longitudes:"1-7 mm", agua:null}},
+  {id:"oneblade-360", nombre:"Philips OneBlade 360", categoria:"Afeitado", asin:"B0CQHW6YD8", imagen:"",
+   ideal:"Recortar, perfilar y afeitar con un solo aparato",
+   puntos:["Cuchilla 360 que se inclina en todas direcciones","Peine 5 en 1 (1-5 mm)","Sirve también para el cuerpo"],
+   specs:{autonomia:null, carga:null, peines:null, longitudes:"1-5 mm", agua:null}},
+  {id:"gillette-kit", nombre:"King C. Gillette Kit Barba Rutina Perfecta", categoria:"Cuidado", asin:"B0FQ5Q4NDY", imagen:"",
+   ideal:"Regalo o cuidado diario de la barba",
+   puntos:["Jabón 3 en 1, suavizante, aceite y crema","Para barba corta o larga"],
+   specs:{autonomia:null, carga:null, peines:null, longitudes:null, agua:null}},
 ];
 
 /* Filas del comparador. mejor: "max" = gana el número más alto, "min" = el más bajo */
@@ -294,9 +296,8 @@ const FILAS = [
   {k:"autonomia", t:"Autonomía", f:p=>s(p,"autonomia")==null?"—":s(p,"autonomia")+" min", v:p=>s(p,"autonomia"), mejor:"max"},
   {k:"carga", t:"Tiempo de carga", f:p=>s(p,"carga")==null?"—":s(p,"carga")+" min", v:p=>s(p,"carga"), mejor:"min"},
   {k:"peines", t:"Peines guía", f:p=>s(p,"peines")==null?"—":s(p,"peines"), v:p=>s(p,"peines"), mejor:"max"},
+  {k:"longitudes", t:"Longitudes de corte", f:p=>s(p,"longitudes")??"—"},
   {k:"agua", t:"Resistente al agua", f:p=>s(p,"agua")??"—"},
-  {k:"peso", t:"Peso", f:p=>s(p,"peso")==null?"—":s(p,"peso")+" g", v:p=>s(p,"peso"), mejor:"min"},
-  {k:"garantia", t:"Garantía", f:p=>s(p,"garantia")==null?"—":s(p,"garantia")+" años", v:p=>s(p,"garantia"), mejor:"max"},
 ];
 
 const ICONOS = {
@@ -402,7 +403,7 @@ document.addEventListener("change",e=>{
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
-seleccion = ["ej1","ej2"];
+seleccion = ["remington-genius","cecotec-bamba"];
 render();
 </script>
 </body>
