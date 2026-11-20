@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://juanibanezperez621-arch.github.io/corte-en-casa/sitemap.xml

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Corte en Casa · Máquinas, recortadoras y cuidado de barba comparados</title>
 <meta name="description" content="Guía para elegir máquina de cortar pelo, recortadora de barba y productos de afeitado. Compara modelos lado a lado.">
+<link rel="canonical" href="https://juanibanezperez621-arch.github.io/corte-en-casa/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
@@ -69,8 +70,19 @@ h2{font-stretch:75%;font-weight:800;font-size:44px;line-height:1.05;margin:0 0 1
 .cat{font-size:13px;color:var(--steel);font-weight:600}
 .card h3{margin:0;font-size:19px;line-height:1.2;font-stretch:87%;font-weight:750}
 .card ul{margin:2px 0 0;padding-left:18px;font-size:15px;color:var(--steel)}
-.price{font-size:24px;font-weight:800;font-stretch:75%;margin-top:auto;padding-top:8px}
-.stars{color:var(--leather);font-size:15px;letter-spacing:1px}
+.ideal{font-size:15px;margin-top:auto;padding-top:8px}
+.ideal b{color:var(--leather)}
+
+/* guía */
+#guia .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 48px}
+#guia h3{font-stretch:87%;font-weight:750;font-size:24px;line-height:1.2;margin:0 0 8px}
+#guia p,#guia li{max-width:62ch}
+#guia ul{padding-left:20px;margin:8px 0 0}
+#faq{background:#fff;border-top:1px solid var(--tile-line)}
+details{border-bottom:1px solid var(--tile-line);padding:16px 0;max-width:760px}
+summary{font-weight:700;font-size:18px;cursor:pointer}
+details p{margin:10px 0 0;color:var(--steel)}
+footer a{color:#fff}
 .card .actions{display:flex;gap:8px;padding:0 18px 18px}
 .card .actions .btn{flex:1;text-align:center;padding:10px 8px;font-size:14px;white-space:nowrap}
 .cmp-toggle[aria-pressed="true"]{background:var(--tile);border-color:var(--steel)}
@@ -101,6 +113,7 @@ footer strong{color:#fff}
   nav a{margin-left:14px;font-size:14px}
   nav a.hide-sm{display:none}
   .pickers{grid-template-columns:1fr}
+  #guia .cols{grid-template-columns:1fr}
   h2{font-size:36px}
   section{padding:56px 0}
 }
@@ -113,7 +126,7 @@ footer strong{color:#fff}
     <nav aria-label="Principal">
       <a href="#productos">Productos</a>
       <a href="#comparador">Comparador <span class="count" id="navCount">0</span></a>
-      <a class="hide-sm" href="#aviso">Cómo elegimos</a>
+      <a class="hide-sm" href="#guia">Guía de compra</a>
     </nav>
   </div>
 </header>
@@ -123,7 +136,7 @@ footer strong{color:#fff}
     <div class="wrap">
       <div>
         <h1>Qué máquina comprar para cortarte el pelo en casa</h1>
-        <p>Cortapelos, recortadoras de barba y productos de afeitado probados y comparados, con lo que importa de verdad: autonomía, cuchillas, peines y precio.</p>
+        <p>Cortapelos, recortadoras de barba y productos de afeitado comparados con lo que importa de verdad: autonomía, cuchillas, peines guía y facilidad de uso.</p>
         <div class="btns">
           <a class="btn primary" href="#productos">Ver productos</a>
           <a class="btn" href="#comparador">Comparar modelos</a>
@@ -148,7 +161,71 @@ footer strong{color:#fff}
       <p class="lead">Elige hasta tres productos. Marcamos con ✓ el mejor valor de cada fila.</p>
       <div class="pickers" id="pickers"></div>
       <div class="table-wrap" id="tableWrap"></div>
-      <p class="note">Los precios de Amazon cambian a menudo; el precio final es el que veas en Amazon al comprar.</p>
+      <p class="note">No mostramos precios porque cambian a menudo: consulta el precio actual en Amazon antes de comprar.</p>
+    </div>
+  </section>
+
+  <section id="guia">
+    <div class="wrap">
+      <h2>Guía de compra</h2>
+      <p class="lead">Lo que conviene mirar antes de elegir, explicado sin tecnicismos.</p>
+      <div class="cols">
+        <div>
+          <h3>Cortapelos, recortadora o afeitadora</h3>
+          <p>Son tres herramientas distintas y es fácil confundirlas:</p>
+          <ul>
+            <li><strong>Cortapelos:</strong> cuchilla ancha (unos 4 cm) y motor más potente. Sirve para cortar el pelo de la cabeza, sobre todo cortes cortos o degradados.</li>
+            <li><strong>Recortadora de barba:</strong> cuchilla más estrecha y peines con muchas longitudes pequeñas. Ideal para mantener la barba o perfilar.</li>
+            <li><strong>Afeitadora:</strong> deja la piel lisa. No sirve para dejar una longitud concreta.</li>
+          </ul>
+          <p>Si quieres cortarte el pelo y además arreglarte la barba, un cortapelos más una recortadora sencilla suele dar mejor resultado que un único aparato «todo en uno».</p>
+        </div>
+        <div>
+          <h3>Qué mirar en un cortapelos</h3>
+          <ul>
+            <li><strong>Cuchillas:</strong> las de acero inoxidable o titanio aguantan bien. Las cerámicas se calientan menos, pero son más frágiles si se caen.</li>
+            <li><strong>Peines guía:</strong> con 6 a 8 peines (de 3 a 25 mm) cubres casi cualquier corte. Que encajen firmes es más importante que tener muchos.</li>
+            <li><strong>Palanca de ajuste:</strong> permite afinar la longitud entre dos peines. Muy útil para degradados.</li>
+            <li><strong>Con o sin cable:</strong> elige uno que funcione también enchufado, así nunca te quedas a medias si se acaba la batería.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Autonomía y carga</h3>
+          <p>Un corte en casa dura entre 15 y 30 minutos, así que cualquier aparato con 60 minutos de autonomía va sobrado. Fíjate más en el tiempo de carga y en si tiene carga rápida: unos minutos enchufado para salir del paso es muy práctico.</p>
+          <p>Las baterías de ion de litio mantienen la potencia hasta casi agotarse. Las antiguas de níquel pierden fuerza a medida que se descargan y el corte tira del pelo.</p>
+        </div>
+        <div>
+          <h3>Mantenimiento: lo que alarga su vida</h3>
+          <ul>
+            <li>Quita el pelo de la cuchilla con el cepillo después de cada uso.</li>
+            <li>Pon una o dos gotas de aceite en la cuchilla cada pocos usos. Casi todas las máquinas lo incluyen.</li>
+            <li>Lava bajo el grifo solo si el fabricante indica que es lavable.</li>
+            <li>No guardes la máquina húmeda ni dentro del baño si hay mucho vapor.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Es difícil cortarse el pelo uno mismo?</summary>
+        <p>Un corte a una sola longitud es muy sencillo: pon el peine, pasa la máquina a contrapelo por toda la cabeza y listo. Los degradados requieren práctica; empieza siempre con un peine más largo del que crees necesitar, porque siempre puedes cortar más, pero no al revés.</p>
+      </details>
+      <details>
+        <summary>¿Puedo usar un cortapelos para la barba?</summary>
+        <p>Para barbas de varios milímetros sí funciona, pero para perfilar o para longitudes muy cortas una recortadora es más precisa y cómoda.</p>
+      </details>
+      <details>
+        <summary>¿Cada cuánto hay que cambiar las cuchillas?</summary>
+        <p>Con un mantenimiento básico, las cuchillas de un cortapelos doméstico duran años. Si notas que tira del pelo aunque la batería esté cargada, prueba primero a limpiarla y lubricarla; si sigue igual, es momento de cambiarla.</p>
+      </details>
+      <details>
+        <summary>¿Merece la pena una máquina profesional para casa?</summary>
+        <p>Solo si cortas el pelo a varias personas o con mucha frecuencia. Para uso personal, un modelo doméstico de gama media cubre de sobra lo necesario.</p>
+      </details>
     </div>
   </section>
 </main>
@@ -157,47 +234,62 @@ footer strong{color:#fff}
   <div class="wrap">
     <p><strong>Corte en Casa</strong> recomienda productos que nos parecen buenas compras por su relación calidad-precio.</p>
     <p>Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Si compras desde nuestros enlaces, a ti no te cuesta más.</p>
-    <p>© <span id="year"></span> Corte en Casa</p>
+    <p>© <span id="year"></span> Corte en Casa · <a href="privacidad/">Política de privacidad y cookies</a></p>
   </div>
 </footer>
 
 <script>
 /* ============================================================
-   PRODUCTOS — edita solo esta lista.
+   PRODUCTOS — edita solo esta parte.
+
+   TAG_AMAZON: tu ID de afiliado de Amazon (termina en -21).
    Para cada producto:
-   - nombre, categoria, precio (€), valoracion (0-5)
-   - imagen: URL de la foto (déjala "" para usar el icono)
-   - enlace: tu enlace de afiliado de Amazon
+   - nombre, categoria
+   - asin: el código de 10 caracteres del producto en Amazon
+       (sale en la URL: amazon.es/dp/B0XXXXXXXX). Con él se crea
+       el enlace de afiliado automáticamente.
+   - imagen: déjala "" para usar el icono
+       (no copies fotos de Amazon a mano: sus normas no lo permiten)
+   - ideal: para quién es (una frase corta)
    - puntos: 2-3 ventajas cortas
    - specs: lo que sale en el comparador
    - ejemplo: true = muestra la etiqueta «Ejemplo» (pon false en los reales)
+   NO pongas precios ni estrellas de Amazon: sus normas no permiten
+   mostrarlos copiados a mano.
    ============================================================ */
+const TAG_AMAZON = ""; // por ejemplo "cortecasa-21"
+
 const PRODUCTOS = [
-  {id:"ej1", ejemplo:true, nombre:"Cortapelos inalámbrico (ejemplo A)", categoria:"Cortapelos", precio:49.99, valoracion:4.5, imagen:"", enlace:"#",
+  {id:"ej1", ejemplo:true, nombre:"Cortapelos inalámbrico (ejemplo A)", categoria:"Cortapelos", asin:"", imagen:"",
+   ideal:"Primer cortapelos para uso personal",
    puntos:["Cuchillas de acero","8 peines guía","Base de carga"],
    specs:{autonomia:120, carga:90, peines:8, agua:"No", peso:320, garantia:2}},
-  {id:"ej2", ejemplo:true, nombre:"Cortapelos profesional (ejemplo B)", categoria:"Cortapelos", precio:89.99, valoracion:4.7, imagen:"", enlace:"#",
+  {id:"ej2", ejemplo:true, nombre:"Cortapelos profesional (ejemplo B)", categoria:"Cortapelos", asin:"", imagen:"",
+   ideal:"Degradados y cortes frecuentes",
    puntos:["Motor potente","Ajuste de cuchilla","Uso con y sin cable"],
    specs:{autonomia:90, carga:120, peines:8, agua:"No", peso:410, garantia:2}},
-  {id:"ej3", ejemplo:true, nombre:"Recortadora de barba (ejemplo C)", categoria:"Barba", precio:34.99, valoracion:4.4, imagen:"", enlace:"#",
+  {id:"ej3", ejemplo:true, nombre:"Recortadora de barba (ejemplo C)", categoria:"Barba", asin:"", imagen:"",
+   ideal:"Mantener la barba a una longitud fija",
    puntos:["20 longitudes","Lavable","Carga rápida"],
    specs:{autonomia:80, carga:60, peines:2, agua:"Sí", peso:150, garantia:2}},
-  {id:"ej4", ejemplo:true, nombre:"Recortadora multiuso 9 en 1 (ejemplo D)", categoria:"Barba", precio:44.99, valoracion:4.3, imagen:"", enlace:"#",
+  {id:"ej4", ejemplo:true, nombre:"Recortadora multiuso 9 en 1 (ejemplo D)", categoria:"Barba", asin:"", imagen:"",
+   ideal:"Un solo aparato para barba, nariz y cuerpo",
    puntos:["Cabezales para nariz y cuerpo","Estuche","Resistente al agua"],
    specs:{autonomia:100, carga:75, peines:6, agua:"Sí", peso:180, garantia:2}},
-  {id:"ej5", ejemplo:true, nombre:"Afeitadora de láminas (ejemplo E)", categoria:"Afeitado", precio:69.99, valoracion:4.2, imagen:"", enlace:"#",
+  {id:"ej5", ejemplo:true, nombre:"Afeitadora de láminas (ejemplo E)", categoria:"Afeitado", asin:"", imagen:"",
+   ideal:"Afeitado apurado diario",
    puntos:["Afeitado en seco y mojado","Láminas flotantes"],
    specs:{autonomia:50, carga:60, peines:0, agua:"Sí", peso:170, garantia:2}},
-  {id:"ej6", ejemplo:true, nombre:"Kit de cuidado de barba (ejemplo F)", categoria:"Cuidado", precio:24.99, valoracion:4.6, imagen:"", enlace:"#",
+  {id:"ej6", ejemplo:true, nombre:"Kit de cuidado de barba (ejemplo F)", categoria:"Cuidado", asin:"", imagen:"",
+   ideal:"Regalo o cuidado de barbas largas",
    puntos:["Aceite, bálsamo y peine","Ideal para regalo"],
    specs:{autonomia:null, carga:null, peines:null, agua:"—", peso:250, garantia:null}},
 ];
 
 /* Filas del comparador. mejor: "max" = gana el número más alto, "min" = el más bajo */
 const FILAS = [
-  {k:"precio", t:"Precio", f:p=>fmt(p.precio), v:p=>p.precio, mejor:"min"},
-  {k:"valoracion", t:"Valoración", f:p=>p.valoracion+" / 5", v:p=>p.valoracion, mejor:"max"},
   {k:"categoria", t:"Tipo", f:p=>p.categoria},
+  {k:"ideal", t:"Ideal para", f:p=>p.ideal||"—"},
   {k:"autonomia", t:"Autonomía", f:p=>s(p,"autonomia")==null?"—":s(p,"autonomia")+" min", v:p=>s(p,"autonomia"), mejor:"max"},
   {k:"carga", t:"Tiempo de carga", f:p=>s(p,"carga")==null?"—":s(p,"carga")+" min", v:p=>s(p,"carga"), mejor:"min"},
   {k:"peines", t:"Peines guía", f:p=>s(p,"peines")==null?"—":s(p,"peines"), v:p=>s(p,"peines"), mejor:"max"},
@@ -218,8 +310,15 @@ let filtro = "Todos";
 let seleccion = [];
 
 function s(p,k){return p.specs ? p.specs[k] : null}
-function fmt(n){return n.toLocaleString("es-ES",{style:"currency",currency:"EUR"})}
-function estrellas(v){const l=Math.round(v);return "★".repeat(l)+"☆".repeat(5-l)}
+function enlace(p){
+  if(!p.asin) return "#";
+  return "https://www.amazon.es/dp/"+encodeURIComponent(p.asin)+(TAG_AMAZON?"?tag="+encodeURIComponent(TAG_AMAZON):"");
+}
+function botonAmazon(p,estilo){
+  const href = enlace(p);
+  if(href==="#") return `<span class="btn primary" style="opacity:.45;cursor:default;${estilo||""}" title="Enlace pendiente">Ver precio en Amazon</span>`;
+  return `<a class="btn primary" style="${estilo||""}" href="${esc(href)}" target="_blank" rel="nofollow sponsored noopener">Ver precio en Amazon</a>`;
+}
 function byId(id){return PRODUCTOS.find(p=>p.id===id)}
 function esc(t){return String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 
@@ -239,12 +338,11 @@ function pintarProductos(){
       <div class="body">
         <span class="cat">${esc(p.categoria)}</span>
         <h3>${esc(p.nombre)}</h3>
-        <span class="stars" aria-label="Valoración ${p.valoracion} de 5">${estrellas(p.valoracion)} <span style="color:var(--steel)">${p.valoracion}</span></span>
         <ul>${p.puntos.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
-        <div class="price">${fmt(p.precio)}</div>
+        ${p.ideal?`<div class="ideal"><b>Ideal para:</b> ${esc(p.ideal)}</div>`:""}
       </div>
       <div class="actions">
-        <a class="btn primary" href="${esc(p.enlace)}" target="_blank" rel="nofollow sponsored noopener">Ver en Amazon</a>
+        ${botonAmazon(p)}
         <button class="btn cmp-toggle" type="button" aria-pressed="${on}" data-id="${p.id}">${on?"Quitar":"Comparar"}</button>
       </div>
     </article>`;
@@ -275,7 +373,7 @@ function pintarTabla(){
     }
     return `<tr><th scope="row">${f.t}</th>${ps.map(p=>`<td class="${best!==null&&f.v(p)===best?"best":""}">${esc(f.f(p))}</td>`).join("")}</tr>`;
   }).join("");
-  const links = `<tr><th scope="row">Comprar</th>${ps.map(p=>`<td><a class="btn primary" style="padding:8px 14px;font-size:14px" href="${esc(p.enlace)}" target="_blank" rel="nofollow sponsored noopener">Ver en Amazon</a></td>`).join("")}</tr>`;
+  const links = `<tr><th scope="row">Comprar</th>${ps.map(p=>`<td>${botonAmazon(p,"padding:8px 14px;font-size:14px")}</td>`).join("")}</tr>`;
   wrap.innerHTML = `<table>${head}<tbody>${body}${links}</tbody></table>`;
 }
 
