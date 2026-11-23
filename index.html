@@ -1,410 +1,193 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es" data-ga="">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Corte en Casa · Máquinas, recortadoras y cuidado de barba comparados</title>
-<meta name="description" content="Guía para elegir máquina de cortar pelo, recortadora de barba y productos de afeitado. Compara modelos lado a lado.">
+<title>CorteEnCasa: corte de barbería sin salir de casa</title>
+<meta name="description" content="Qué máquina cortapelo, recortadora o navaja comprar y cómo usarla para cortarte el pelo y arreglarte la barba en casa. Guías, comparativas y tutoriales.">
 <link rel="canonical" href="https://juanibanezperez621-arch.github.io/corte-en-casa/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
-<style>
-:root{
-  --tile:#DDE7E1;      /* azulejo verde agua de barbería clásica */
-  --tile-line:#C4D3CB;
-  --ink:#1D2326;
-  --steel:#4A5761;
-  --leather:#6E1F26;   /* cuero granate del sillón */
-  --paper:#FAFBF9;
-  --chrome:#B7C1C7;
-  --font:"Archivo", "Arial Narrow", Arial, sans-serif;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-body{margin:0;font-family:var(--font);font-stretch:100%;color:var(--ink);background:var(--paper);line-height:1.55;font-size:17px}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--leather);outline-offset:3px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-
-/* cabecera */
-header.top{background:var(--paper);border-bottom:1px solid var(--tile-line);position:sticky;top:0;z-index:20}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-stretch:75%;font-size:24px;letter-spacing:.01em}
-.logo .pole{width:12px;height:30px;border-radius:6px;background:repeating-linear-gradient(135deg,var(--leather) 0 6px,#fff 6px 12px,var(--steel) 12px 18px,#fff 18px 24px);box-shadow:inset 0 0 0 1px var(--ink)}
-nav a{text-decoration:none;margin-left:22px;font-weight:600;font-size:15px}
-nav a:hover{color:var(--leather)}
-.count{display:inline-block;min-width:22px;padding:0 6px;margin-left:4px;border-radius:11px;background:var(--leather);color:#fff;font-size:13px;text-align:center}
-
-/* portada: azulejo */
-.hero{background-color:var(--tile);background-image:linear-gradient(var(--tile-line) 1px,transparent 1px),linear-gradient(90deg,var(--tile-line) 1px,transparent 1px);background-size:56px 56px;border-bottom:1px solid var(--tile-line);overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1fr 150px;gap:40px;align-items:stretch;padding-top:72px;padding-bottom:72px}
-.hero h1{font-stretch:62%;font-weight:900;font-size:clamp(52px,9vw,112px);line-height:.9;margin:0 0 24px;letter-spacing:-.005em;max-width:11ch}
-.hero p{font-size:19px;max-width:52ch;margin:0 0 28px;color:var(--steel)}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:13px 22px;border-radius:4px;font-weight:700;text-decoration:none;font-size:16px;border:2px solid var(--ink);cursor:pointer;font-family:inherit;background:transparent;color:var(--ink)}
-.btn.primary{background:var(--ink);color:#fff}
-.btn.primary:hover{background:var(--leather);border-color:var(--leather)}
-.btn:hover{border-color:var(--leather)}
-.bigpole{border-radius:75px;border:3px solid var(--ink);background:repeating-linear-gradient(160deg,var(--leather) 0 26px,#fff 26px 52px,var(--steel) 52px 78px,#fff 78px 104px);background-size:100% 208px;animation:spin 6s linear infinite;min-height:360px;position:relative}
-.bigpole::before,.bigpole::after{content:"";position:absolute;left:-10px;right:-10px;height:22px;background:var(--chrome);border:3px solid var(--ink);border-radius:8px}
-.bigpole::before{top:-14px}.bigpole::after{bottom:-14px}
-@keyframes spin{to{background-position:0 208px}}
-
-section{padding:80px 0}
-h2{font-stretch:75%;font-weight:800;font-size:44px;line-height:1.05;margin:0 0 12px}
-.lead{color:var(--steel);max-width:60ch;margin:0 0 32px;font-size:18px}
-
-/* productos */
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
-.chip{font:inherit;font-size:15px;font-weight:600;padding:8px 16px;border-radius:20px;border:1.5px solid var(--tile-line);background:#fff;cursor:pointer;color:var(--ink)}
-.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
-.card{background:#fff;border:1px solid var(--tile-line);border-radius:6px;display:flex;flex-direction:column;overflow:hidden}
-.card .img{aspect-ratio:4/3;background:var(--tile);display:grid;place-items:center;border-bottom:1px solid var(--tile-line);position:relative}
-.card .img img{width:100%;height:100%;object-fit:contain;background:#fff}
-.card .img svg{width:76px;height:76px;stroke:var(--steel)}
-.sample{position:absolute;top:10px;left:10px;font-size:12px;font-weight:700;background:#fff;border:1px solid var(--tile-line);padding:2px 8px;border-radius:3px;color:var(--steel)}
-.card .body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
-.cat{font-size:13px;color:var(--steel);font-weight:600}
-.card h3{margin:0;font-size:19px;line-height:1.2;font-stretch:87%;font-weight:750}
-.card ul{margin:2px 0 0;padding-left:18px;font-size:15px;color:var(--steel)}
-.ideal{font-size:15px;margin-top:auto;padding-top:8px}
-.ideal b{color:var(--leather)}
-
-/* guía */
-#guia .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 48px}
-#guia h3{font-stretch:87%;font-weight:750;font-size:24px;line-height:1.2;margin:0 0 8px}
-#guia p,#guia li{max-width:62ch}
-#guia ul{padding-left:20px;margin:8px 0 0}
-#faq{background:#fff;border-top:1px solid var(--tile-line)}
-details{border-bottom:1px solid var(--tile-line);padding:16px 0;max-width:760px}
-summary{font-weight:700;font-size:18px;cursor:pointer}
-details p{margin:10px 0 0;color:var(--steel)}
-footer a{color:#fff}
-.card .actions{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 18px}
-.card .actions .btn.primary{flex-basis:100%}
-.card .actions .btn{flex:1;text-align:center;padding:10px 8px;font-size:14px;white-space:nowrap}
-.cmp-toggle[aria-pressed="true"]{background:var(--tile);border-color:var(--steel)}
-
-/* comparador */
-#comparador{background:var(--tile);border-top:1px solid var(--tile-line)}
-.pickers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
-.pickers label{font-size:14px;font-weight:600;color:var(--steel);display:block;margin-bottom:4px}
-select{width:100%;font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid var(--tile-line);border-radius:4px;background:#fff;color:var(--ink)}
-.table-wrap{overflow-x:auto;background:#fff;border:1px solid var(--tile-line);border-radius:6px}
-table{border-collapse:collapse;width:100%;min-width:620px}
-th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--tile-line);vertical-align:top;font-size:16px}
-thead th{font-stretch:87%;font-size:18px;font-weight:750;background:var(--paper)}
-tbody th{font-weight:600;color:var(--steel);width:22%;font-size:15px}
-td.best{background:#EEF4F0;font-weight:700}
-td.best::after{content:" ✓";color:var(--leather)}
-tr:last-child th,tr:last-child td{border-bottom:0}
-.empty{padding:40px;text-align:center;color:var(--steel)}
-.note{font-size:14px;color:var(--steel);margin-top:12px}
-
-footer{background:var(--ink);color:#C9D1D6;padding:40px 0;font-size:14px}
-footer p{max-width:70ch;margin:0 0 10px}
-footer strong{color:#fff}
-
-@media (max-width:800px){
-  .hero .wrap{grid-template-columns:1fr;padding-top:48px;padding-bottom:48px}
-  .bigpole{display:none}
-  nav a{margin-left:14px;font-size:14px}
-  nav a.hide-sm{display:none}
-  .pickers{grid-template-columns:1fr}
-  #guia .cols{grid-template-columns:1fr}
-  h2{font-size:36px}
-  section{padding:56px 0}
-}
-</style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CorteEnCasa">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="CorteEnCasa: corte de barbería sin salir de casa">
+<meta property="og:description" content="Qué máquina cortapelo, recortadora o navaja comprar y cómo usarla para cortarte el pelo y arreglarte la barba en casa. Guías, comparativas y tutoriales.">
+<meta property="og:url" content="https://juanibanezperez621-arch.github.io/corte-en-casa/">
+<link rel="icon" href="/corte-en-casa/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/corte-en-casa/assets/fonts/gloock-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/corte-en-casa/assets/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/corte-en-casa/assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CorteEnCasa","url":"https://juanibanezperez621-arch.github.io/corte-en-casa/","inLanguage":"es-ES","description":"Guías, comparativas y tutoriales para cortarte el pelo y arreglarte la barba en casa con las herramientas adecuadas."}</script>
 </head>
 <body>
-<header class="top">
-  <div class="wrap">
-    <a class="logo" href="#"><span class="pole" aria-hidden="true"></span>Corte en Casa</a>
-    <nav aria-label="Principal">
-      <a href="#productos">Productos</a>
-      <a href="#comparador">Comparador <span class="count" id="navCount">0</span></a>
-      <a class="hide-sm" href="#guia">Guía de compra</a>
-    </nav>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="cabecera">
+  <div class="container cabecera__fila">
+    <a class="marca" href="/corte-en-casa/">CorteEnCasa</a>
+    <nav class="menu" aria-label="Principal"><ul><li><a href="/corte-en-casa/guias/">Guías</a></li><li><a href="/corte-en-casa/comparador/">Comparador</a></li><li><a href="/corte-en-casa/tutoriales/">Tutoriales</a></li><li><a href="/corte-en-casa/categorias/">Categorías</a></li></ul></nav>
+    <a class="boton boton--secundario cabecera__accion" href="/corte-en-casa/mejores-maquinas-cortapelo/">La guía de máquinas</a>
+    <details class="menu-movil">
+      <summary>Menú</summary>
+      <nav aria-label="Principal en móvil"><ul><li><a href="/corte-en-casa/guias/">Guías</a></li><li><a href="/corte-en-casa/comparador/">Comparador</a></li><li><a href="/corte-en-casa/tutoriales/">Tutoriales</a></li><li><a href="/corte-en-casa/categorias/">Categorías</a></li><li><a href="/corte-en-casa/mejores-maquinas-cortapelo/">La guía de máquinas</a></li></ul></nav>
+    </details>
   </div>
 </header>
+<main id="contenido">
 
-<main>
-  <div class="hero">
-    <div class="wrap">
-      <div>
-        <h1>Qué máquina comprar para cortarte el pelo en casa</h1>
-        <p>Cortapelos, recortadoras de barba y productos de afeitado comparados con lo que importa de verdad: autonomía, cuchillas, peines guía y facilidad de uso.</p>
-        <div class="btns">
-          <a class="btn primary" href="#productos">Ver productos</a>
-          <a class="btn" href="#comparador">Comparar modelos</a>
-        </div>
-      </div>
-      <div class="bigpole" aria-hidden="true"></div>
+
+<section class="hero">
+  <div class="container hero__rejilla">
+    <div>
+      <h1>Corte de barbería, sin salir de casa</h1>
+      <p class="hero__frase">Qué comprar y cómo usarlo para cortarte el pelo tú mismo.</p>
+      <div class="hero__acciones"><a class="boton boton--primario" href="/corte-en-casa/guias/">Ver las guías</a></div>
     </div>
+    <figure class="carta">
+      <figcaption>La carta de la casa</figcaption>
+      <ul>
+        <li><a href="/corte-en-casa/tutoriales/como-cortarte-el-pelo-con-maquina/"><span class="carta__servicio">Corte a máquina</span><span class="carta__herramienta">Cortapelo, peines guía y espejo de 360°</span><span class="carta__ver">Tutorial</span></a></li>
+        <li><a href="/corte-en-casa/tutoriales/como-hacer-un-degradado-en-casa/"><span class="carta__servicio">Degradado</span><span class="carta__herramienta">Cortapelo de cuchilla fina y mucha paciencia</span><span class="carta__ver">Tutorial</span></a></li>
+        <li><a href="/corte-en-casa/tutoriales/como-perfilar-la-barba/"><span class="carta__servicio">Perfilar la barba</span><span class="carta__herramienta">Recortadora en T y aceite para después</span><span class="carta__ver">Tutorial</span></a></li>
+        <li><a href="/corte-en-casa/navajas-y-maquinillas/"><span class="carta__servicio">Afeitado clásico</span><span class="carta__herramienta">Navaja de cuchilla intercambiable y brocha</span><span class="carta__ver">Herramientas</span></a></li>
+      </ul>
+    </figure>
   </div>
+</section>
 
-  <section id="productos">
-    <div class="wrap">
-      <h2>Productos recomendados</h2>
-      <p class="lead">Marca hasta tres productos con «Comparar» y míralos lado a lado en el comparador.</p>
-      <div class="filters" role="group" aria-label="Filtrar por categoría" id="filters"></div>
-      <div class="grid" id="grid"></div>
+<section class="seccion" id="categorias" aria-labelledby="t-categorias">
+  <div class="container">
+    <div class="seccion__cabeza">
+      <h2 id="t-categorias">Elige por herramienta</h2>
+      <p>Ocho cajones, como el mueble de cualquier barbería.</p>
     </div>
-  </section>
+    <ul class="categorias">
+      <li><a href="/corte-en-casa/maquinas-cortapelo/"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="15" rx="3"/><path d="M6 3h12v4H6z"/><path d="M9 3V1.5M12 3V1.5M15 3V1.5"/><path d="M10 12h4"/></svg><span class="categorias__nombre">Máquinas cortapelo</span></a></li>
+      <li><a href="/corte-en-casa/recortadoras-barba/"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="7" width="6" height="15" rx="3"/><path d="M8 3h8v4H8z"/><path d="M10 3V1.5M14 3V1.5"/><circle cx="12" cy="12" r="1.2"/></svg><span class="categorias__nombre">Recortadoras de barba</span></a></li>
+      <li><a href="/corte-en-casa/afeitadoras-electricas/"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9a5 3 0 0 1 10 0v1H7z"/><path d="M8.5 10h7l-1 12h-5z"/><path d="M9.5 6.5h5"/></svg><span class="categorias__nombre">Afeitadoras eléctricas</span></a></li>
+      <li><a href="/corte-en-casa/navajas-y-maquinillas/"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15 15 3l2 2-9 9"/><path d="M8 14l3 3-4.5 4.5a2.1 2.1 0 0 1-3-3z"/></svg><span class="categorias__nombre">Navajas y maquinillas clásicas</span></a></li>
+      <li><a href="/corte-en-casa/tijeras-y-peines/"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.2 15.8 17 3M15.8 15.8 7 3"/></svg><span class="categorias__nombre">Tijeras y peines de barbero</span></a></li>
+      <li><a href="/corte-en-casa/cuidado-barba/"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4v3h-4z"/><path d="M9 5h6l1 3v12a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V8z"/><path d="M12 12c1.2 1.5 1.6 2.4 1.6 3.1a1.6 1.6 0 0 1-3.2 0c0-.7.4-1.6 1.6-3.1z"/></svg><span class="categorias__nombre">Aceites, bálsamos y cuidado de barba</span></a></li>
+      <li><a href="/corte-en-casa/ceras-y-pomadas/"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h14v10a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3z"/><path d="M4 6h16v3H4z"/><path d="M9 14h6"/></svg><span class="categorias__nombre">Ceras, pomadas y fijadores</span></a></li>
+      <li><a href="/corte-en-casa/accesorios-barberia/"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6.5"/><circle cx="12" cy="9" r="3.5"/><path d="M12 15.5V21M8 21h8"/></svg><span class="categorias__nombre">Accesorios de barbería</span></a></li>
+    </ul>
+  </div>
+</section>
 
-  <section id="comparador">
-    <div class="wrap">
-      <h2>Comparador</h2>
-      <p class="lead">Elige hasta tres productos. Marcamos con ✓ el mejor valor de cada fila.</p>
-      <div class="pickers" id="pickers"></div>
-      <div class="table-wrap" id="tableWrap"></div>
-      <p class="note">No mostramos precios porque cambian a menudo: consulta el precio actual en Amazon antes de comprar.</p>
+<section class="seccion seccion--banda" aria-labelledby="t-recomendados">
+  <div class="container">
+    <div class="seccion__cabeza">
+      <h2 id="t-recomendados">Los más recomendados</h2>
+      <p>Seis para montar la barbería en casa. Las estrellas son nuestra nota.</p>
     </div>
-  </section>
+    <div class="productos"><article class="producto producto--breve">
+  <div class="producto__imagen"><div class="placa"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="15" rx="3"/><path d="M6 3h12v4H6z"/><path d="M9 3V1.5M12 3V1.5M15 3V1.5"/><path d="M10 12h4"/></svg></div></div>
+  <div class="producto__cuerpo">
+    <h3 class="producto__nombre">Wahl Magic Clip Cordless</h3>
+    <div class="producto__meta"><p class="nota" role="img" aria-label="Nuestra nota: 4,5 de 5"><svg class="nota__estrellas" viewBox="0 0 120 24" width="100" height="20" aria-hidden="true" focusable="false"><defs><clipPath id="e1"><rect width="108" height="24"/></clipPath></defs><g class="nota__vacia"><path transform="translate(0 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/></g><g class="nota__llena" clip-path="url(#e1)"><path transform="translate(0 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/></g></svg><span aria-hidden="true">4,5</span></p><p class="distincion">Mejor para degradados</p></div>
+    <a class="boton boton--primario" href="https://www.amazon.es/dp/B07T5SB8QF?tag=67280c-21" rel="sponsored nofollow noopener" target="_blank" aria-label="Ver precio en Amazon: Wahl Magic Clip Cordless (se abre en una pestaña nueva)">Ver precio en Amazon</a>
+  </div>
+</article><article class="producto producto--breve">
+  <div class="producto__imagen"><div class="placa"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="15" rx="3"/><path d="M6 3h12v4H6z"/><path d="M9 3V1.5M12 3V1.5M15 3V1.5"/><path d="M10 12h4"/></svg></div></div>
+  <div class="producto__cuerpo">
+    <h3 class="producto__nombre">Philips Serie 5000 HC5630/15</h3>
+    <div class="producto__meta"><p class="nota" role="img" aria-label="Nuestra nota: 4,5 de 5"><svg class="nota__estrellas" viewBox="0 0 120 24" width="100" height="20" aria-hidden="true" focusable="false"><defs><clipPath id="e2"><rect width="108" height="24"/></clipPath></defs><g class="nota__vacia"><path transform="translate(0 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/></g><g class="nota__llena" clip-path="url(#e2)"><path transform="translate(0 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/></g></svg><span aria-hidden="true">4,5</span></p><p class="distincion">Mejor calidad-precio</p></div>
+    <a class="boton boton--primario" href="https://www.amazon.es/dp/B07TPW789G?tag=67280c-21" rel="sponsored nofollow noopener" target="_blank" aria-label="Ver precio en Amazon: Philips Serie 5000 HC5630/15 (se abre en una pestaña nueva)">Ver precio en Amazon</a>
+  </div>
+</article><article class="producto producto--breve">
+  <div class="producto__imagen"><div class="placa"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="7" width="6" height="15" rx="3"/><path d="M8 3h8v4H8z"/><path d="M10 3V1.5M14 3V1.5"/><circle cx="12" cy="12" r="1.2"/></svg></div></div>
+  <div class="producto__cuerpo">
+    <h3 class="producto__nombre">Philips Recortadora de barba Series 7000</h3>
+    <div class="producto__meta"><p class="nota" role="img" aria-label="Nuestra nota: 4,5 de 5"><svg class="nota__estrellas" viewBox="0 0 120 24" width="100" height="20" aria-hidden="true" focusable="false"><defs><clipPath id="e3"><rect width="108" height="24"/></clipPath></defs><g class="nota__vacia"><path transform="translate(0 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/></g><g class="nota__llena" clip-path="url(#e3)"><path transform="translate(0 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/></g></svg><span aria-hidden="true">4,5</span></p><p class="distincion">Mejor calidad-precio</p></div>
+    <a class="boton boton--primario" href="https://www.amazon.es/dp/B0F6YJ4K4S?tag=67280c-21" rel="sponsored nofollow noopener" target="_blank" aria-label="Ver precio en Amazon: Philips Recortadora de barba Series 7000 (se abre en una pestaña nueva)">Ver precio en Amazon</a>
+  </div>
+</article><article class="producto producto--breve">
+  <div class="producto__imagen"><div class="placa"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9a5 3 0 0 1 10 0v1H7z"/><path d="M8.5 10h7l-1 12h-5z"/><path d="M9.5 6.5h5"/></svg></div></div>
+  <div class="producto__cuerpo">
+    <h3 class="producto__nombre">Braun Series 5 51-B1000s</h3>
+    <div class="producto__meta"><p class="nota" role="img" aria-label="Nuestra nota: 4,5 de 5"><svg class="nota__estrellas" viewBox="0 0 120 24" width="100" height="20" aria-hidden="true" focusable="false"><defs><clipPath id="e4"><rect width="108" height="24"/></clipPath></defs><g class="nota__vacia"><path transform="translate(0 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/></g><g class="nota__llena" clip-path="url(#e4)"><path transform="translate(0 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/></g></svg><span aria-hidden="true">4,5</span></p><p class="distincion">Mejor calidad-precio</p></div>
+    <a class="boton boton--primario" href="https://www.amazon.es/dp/B0B3JBYXG8?tag=67280c-21" rel="sponsored nofollow noopener" target="_blank" aria-label="Ver precio en Amazon: Braun Series 5 51-B1000s (se abre en una pestaña nueva)">Ver precio en Amazon</a>
+  </div>
+</article><article class="producto producto--breve">
+  <div class="producto__imagen"><div class="placa"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4v3h-4z"/><path d="M9 5h6l1 3v12a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V8z"/><path d="M12 12c1.2 1.5 1.6 2.4 1.6 3.1a1.6 1.6 0 0 1-3.2 0c0-.7.4-1.6 1.6-3.1z"/></svg></div></div>
+  <div class="producto__cuerpo">
+    <h3 class="producto__nombre">Proraso Aceite de barba Wood &amp; Spice</h3>
+    <div class="producto__meta"><p class="nota" role="img" aria-label="Nuestra nota: 4,5 de 5"><svg class="nota__estrellas" viewBox="0 0 120 24" width="100" height="20" aria-hidden="true" focusable="false"><defs><clipPath id="e5"><rect width="108" height="24"/></clipPath></defs><g class="nota__vacia"><path transform="translate(0 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/></g><g class="nota__llena" clip-path="url(#e5)"><path transform="translate(0 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/></g></svg><span aria-hidden="true">4,5</span></p></div>
+    <a class="boton boton--primario" href="https://www.amazon.es/dp/B00PKA9NWQ?tag=67280c-21" rel="sponsored nofollow noopener" target="_blank" aria-label="Ver precio en Amazon: Proraso Aceite de barba Wood &amp; Spice (se abre en una pestaña nueva)">Ver precio en Amazon</a>
+  </div>
+</article><article class="producto producto--breve">
+  <div class="producto__imagen"><div class="placa"><svg class="icono" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6.5"/><circle cx="12" cy="9" r="3.5"/><path d="M12 15.5V21M8 21h8"/></svg></div></div>
+  <div class="producto__cuerpo">
+    <h3 class="producto__nombre">Espejo 360° con luz LED recargable</h3>
+    <div class="producto__meta"><p class="nota" role="img" aria-label="Nuestra nota: 4,5 de 5"><svg class="nota__estrellas" viewBox="0 0 120 24" width="100" height="20" aria-hidden="true" focusable="false"><defs><clipPath id="e6"><rect width="108" height="24"/></clipPath></defs><g class="nota__vacia"><path transform="translate(0 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/></g><g class="nota__llena" clip-path="url(#e6)"><path transform="translate(0 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z"/></g></svg><span aria-hidden="true">4,5</span></p><p class="distincion">Mejor para principiantes</p></div>
+    <a class="boton boton--primario" href="https://www.amazon.es/dp/B095YT2QB3?tag=67280c-21" rel="sponsored nofollow noopener" target="_blank" aria-label="Ver precio en Amazon: Espejo 360° con luz LED recargable (se abre en una pestaña nueva)">Ver precio en Amazon</a>
+  </div>
+</article></div>
+    <p class="aviso-afiliado aviso-afiliado--bloque">En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. <a href="/corte-en-casa/divulgacion-afiliados/">Cómo funciona</a></p>
+  </div>
+</section>
 
-  <section id="guia">
-    <div class="wrap">
-      <h2>Guía de compra</h2>
-      <p class="lead">Lo que conviene mirar antes de elegir, explicado sin tecnicismos.</p>
-      <div class="cols">
-        <div>
-          <h3>Cortapelos, recortadora o afeitadora</h3>
-          <p>Son tres herramientas distintas y es fácil confundirlas:</p>
-          <ul>
-            <li><strong>Cortapelos:</strong> cuchilla ancha (unos 4 cm) y motor más potente. Sirve para cortar el pelo de la cabeza, sobre todo cortes cortos o degradados.</li>
-            <li><strong>Recortadora de barba:</strong> cuchilla más estrecha y peines con muchas longitudes pequeñas. Ideal para mantener la barba o perfilar.</li>
-            <li><strong>Afeitadora:</strong> deja la piel lisa. No sirve para dejar una longitud concreta.</li>
-          </ul>
-          <p>Si quieres cortarte el pelo y además arreglarte la barba, un cortapelos más una recortadora sencilla suele dar mejor resultado que un único aparato «todo en uno».</p>
-        </div>
-        <div>
-          <h3>Qué mirar en un cortapelos</h3>
-          <ul>
-            <li><strong>Cuchillas:</strong> las de acero inoxidable o titanio aguantan bien. Las cerámicas se calientan menos, pero son más frágiles si se caen.</li>
-            <li><strong>Peines guía:</strong> con 6 a 8 peines (de 3 a 25 mm) cubres casi cualquier corte. Que encajen firmes es más importante que tener muchos.</li>
-            <li><strong>Palanca de ajuste:</strong> permite afinar la longitud entre dos peines. Muy útil para degradados.</li>
-            <li><strong>Con o sin cable:</strong> elige uno que funcione también enchufado, así nunca te quedas a medias si se acaba la batería.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Autonomía y carga</h3>
-          <p>Un corte en casa dura entre 15 y 30 minutos, así que cualquier aparato con 60 minutos de autonomía va sobrado. Fíjate más en el tiempo de carga y en si tiene carga rápida: unos minutos enchufado para salir del paso es muy práctico.</p>
-          <p>Las baterías de ion de litio mantienen la potencia hasta casi agotarse. Las antiguas de níquel pierden fuerza a medida que se descargan y el corte tira del pelo.</p>
-        </div>
-        <div>
-          <h3>Mantenimiento: lo que alarga su vida</h3>
-          <ul>
-            <li>Quita el pelo de la cuchilla con el cepillo después de cada uso.</li>
-            <li>Pon una o dos gotas de aceite en la cuchilla cada pocos usos. Casi todas las máquinas lo incluyen.</li>
-            <li>Lava bajo el grifo solo si el fabricante indica que es lavable.</li>
-            <li>No guardes la máquina húmeda ni dentro del baño si hay mucho vapor.</li>
-          </ul>
-        </div>
-      </div>
+<section class="seccion" aria-labelledby="t-guias">
+  <div class="container">
+    <div class="seccion__cabeza">
+      <h2 id="t-guias">Últimas guías y tutoriales</h2>
+      <p>Primero qué comprar, después cómo usarlo.</p>
     </div>
-  </section>
+    <ul class="indice">
+      <li><a href="/corte-en-casa/mejores-maquinas-cortapelo/"><span class="indice__tipo">Guía</span><span class="indice__titulo">Las 5 mejores máquinas cortapelo de 2026</span><span class="indice__linea">Cuál comprar según tu pelo y lo que quieras hacer.</span></a></li>
+      <li><a href="/corte-en-casa/tutoriales/como-cortarte-el-pelo-con-maquina/"><span class="indice__tipo">Tutorial</span><span class="indice__titulo">Cómo cortarte el pelo tú mismo con máquina</span><span class="indice__linea">Paso a paso, de la nuca a la parte de arriba.</span></a></li>
+      <li><a href="/corte-en-casa/comparativas/inalambrica-vs-profesional-con-cable/"><span class="indice__tipo">Comparativa</span><span class="indice__titulo">Wahl Magic Clip o Super Taper</span><span class="indice__linea">Inalámbrica o con cable, cara a cara.</span></a></li>
+    </ul>
+  </div>
+</section>
 
-  <section id="faq">
-    <div class="wrap">
-      <h2>Preguntas frecuentes</h2>
-      <details>
-        <summary>¿Es difícil cortarse el pelo uno mismo?</summary>
-        <p>Un corte a una sola longitud es muy sencillo: pon el peine, pasa la máquina a contrapelo por toda la cabeza y listo. Los degradados requieren práctica; empieza siempre con un peine más largo del que crees necesitar, porque siempre puedes cortar más, pero no al revés.</p>
-      </details>
-      <details>
-        <summary>¿Puedo usar un cortapelos para la barba?</summary>
-        <p>Para barbas de varios milímetros sí funciona, pero para perfilar o para longitudes muy cortas una recortadora es más precisa y cómoda.</p>
-      </details>
-      <details>
-        <summary>¿Cada cuánto hay que cambiar las cuchillas?</summary>
-        <p>Con un mantenimiento básico, las cuchillas de un cortapelos doméstico duran años. Si notas que tira del pelo aunque la batería esté cargada, prueba primero a limpiarla y lubricarla; si sigue igual, es momento de cambiarla.</p>
-      </details>
-      <details>
-        <summary>¿Merece la pena una máquina profesional para casa?</summary>
-        <p>Solo si cortas el pelo a varias personas o con mucha frecuencia. Para uso personal, un modelo doméstico de gama media cubre de sobra lo necesario.</p>
-      </details>
-    </div>
-  </section>
+<section class="seccion seccion--grande" aria-labelledby="t-fiarte">
+  <div class="container">
+    <h2 id="t-fiarte" class="declaracion">Por qué fiarte: recomendamos poco y decimos para quién no es.</h2>
+    <ul class="criterios">
+      <li><h3>Opinión propia</h3><p>Las notas y los pros son nuestros. Nunca copiamos reseñas de compradores.</p></li>
+      <li><h3>Lo malo, también</h3><p>Cada ficha cuenta sus pegas y a quién no le conviene.</p></li>
+      <li><h3>Sin precios inventados</h3><p>El precio cambia cada día: lo ves en Amazon al momento.</p></li>
+      <li><h3>Comisión a la vista</h3><p>Si compras desde un enlace cobramos comisión. Tú pagas lo mismo.</p></li>
+    </ul>
+    <div class="declaracion__enlaces"><a href="/corte-en-casa/sobre-nosotros/">Quién está detrás</a><a href="/corte-en-casa/divulgacion-afiliados/">Cómo ganamos dinero</a></div>
+  </div>
+</section>
 </main>
-
-<footer id="aviso">
-  <div class="wrap">
-    <p><strong>Corte en Casa</strong> recomienda productos que nos parecen buenas compras por su relación calidad-precio.</p>
-    <p>Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Si compras desde nuestros enlaces, a ti no te cuesta más.</p>
-    <p>© <span id="year"></span> Corte en Casa · <a href="privacidad/">Política de privacidad y cookies</a></p>
+<footer class="pie">
+  <div class="container">
+    <p class="pie__marca">CorteEnCasa</p>
+    <div class="pie__columnas">
+      <nav aria-label="Categorías"><p class="pie__titulo">Categorías</p><ul><li><a href="/corte-en-casa/maquinas-cortapelo/">Máquinas cortapelo</a></li><li><a href="/corte-en-casa/recortadoras-barba/">Recortadoras</a></li><li><a href="/corte-en-casa/afeitadoras-electricas/">Afeitadoras</a></li><li><a href="/corte-en-casa/navajas-y-maquinillas/">Navajas</a></li><li><a href="/corte-en-casa/tijeras-y-peines/">Tijeras y peines</a></li><li><a href="/corte-en-casa/cuidado-barba/">Cuidado de barba</a></li><li><a href="/corte-en-casa/ceras-y-pomadas/">Ceras y pomadas</a></li><li><a href="/corte-en-casa/accesorios-barberia/">Accesorios</a></li></ul></nav>
+      <nav aria-label="Guías y tutoriales"><p class="pie__titulo">Guías y tutoriales</p><ul>
+        <li><a href="/corte-en-casa/guias/">Todas las guías</a></li>
+        <li><a href="/corte-en-casa/comparador/">Comparador</a></li>
+        <li><a href="/corte-en-casa/tutoriales/">Todos los tutoriales</a></li>
+        <li><a href="/corte-en-casa/mejores-maquinas-cortapelo/">Máquinas cortapelo 2026</a></li>
+      </ul></nav>
+      <nav aria-label="Sobre la web"><p class="pie__titulo">La web</p><ul>
+        <li><a href="/corte-en-casa/sobre-nosotros/">Sobre nosotros</a></li>
+        <li><a href="/corte-en-casa/divulgacion-afiliados/">Divulgación de afiliados</a></li>
+        <li><a href="/corte-en-casa/aviso-legal/">Aviso legal</a></li>
+        <li><a href="/corte-en-casa/privacidad/">Privacidad</a></li>
+        <li><a href="/corte-en-casa/cookies/">Cookies</a></li>
+        <li><button type="button" class="enlace-boton" data-abrir-cookies>Configurar cookies</button></li>
+      </ul></nav>
+    </div>
+    <p class="aviso-afiliado aviso-afiliado--pie">En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. <a href="/corte-en-casa/divulgacion-afiliados/">Cómo funciona</a></p>
+    <p class="pie__legal">No somos una tienda ni parte de Amazon. © 2026 CorteEnCasa</p>
   </div>
 </footer>
-
-<script>
-/* ============================================================
-   PRODUCTOS — edita solo esta parte.
-
-   TAG_AMAZON: tu ID de afiliado de Amazon (termina en -21).
-   Para cada producto:
-   - nombre, categoria
-   - asin: el código de 10 caracteres del producto en Amazon
-       (sale en la URL: amazon.es/dp/B0XXXXXXXX). Con él se crea
-       el enlace de afiliado automáticamente.
-   - imagen: déjala "" para usar el icono
-       (no copies fotos de Amazon a mano: sus normas no lo permiten)
-   - ideal: para quién es (una frase corta)
-   - puntos: 2-3 ventajas cortas
-   - specs: lo que sale en el comparador
-   - ejemplo: true = muestra la etiqueta «Ejemplo» (pon false en los reales)
-   NO pongas precios ni estrellas de Amazon: sus normas no permiten
-   mostrarlos copiados a mano.
-   ============================================================ */
-const TAG_AMAZON = "67280c-21";
-
-/* Datos sacados de la ficha de cada producto en Amazon.es (20/11/2026).
-   null = el fabricante no lo indica → sale «—» en el comparador. */
-const PRODUCTOS = [
-  {id:"remington-genius", nombre:"Remington Genius (máquina de cortar pelo)", categoria:"Cortapelos", asin:"B09RNBFS2C", imagen:"",
-   ideal:"Cortarte el pelo tú mismo con un kit completo",
-   puntos:["Cuchillas de cerámica autoafilables","10 peines guía (3-40 mm)","Con cable o batería; maletín con tijeras y capa"],
-   specs:{autonomia:50, carga:90, peines:10, longitudes:"0,8-40 mm", agua:null}},
-  {id:"cecotec-bamba", nombre:"Cecotec Bamba PrecisionCare Wet&Dry", categoria:"Cortapelos", asin:"B082DDM32Y", imagen:"",
-   ideal:"Mucha autonomía y poder lavarla bajo el grifo",
-   puntos:["Cuchilla de acero con titanio","8 peines (incluye uno de degradado)","Resistente al agua IPX6"],
-   specs:{autonomia:120, carga:null, peines:8, longitudes:"0,5-30 mm", agua:"Sí (IPX6)"}},
-  {id:"braun-bt7", nombre:"Braun Series 7 BT7525 (recortadora de barba)", categoria:"Barba", asin:"B0DQWYGX7M", imagen:"",
-   ideal:"Barba cuidada con la longitud exacta",
-   puntos:["40 ajustes de longitud cada 0,5 mm","Rueda de precisión PrecisionWheel","100 % resistente al agua"],
-   specs:{autonomia:120, carga:null, peines:null, longitudes:"40 ajustes (cada 0,5 mm)", agua:"Sí"}},
-  {id:"philips-aio3000", nombre:"Philips Todo en Uno Series 3000 (9 en 1)", categoria:"Barba", asin:"B0FDL1XP3J", imagen:"",
-   ideal:"Un solo aparato para barba, nariz y cuerpo",
-   puntos:["Cuchillas autoafilables sin lubricar","Peine ajustable 3-7 mm y peines de barba 1-2 mm","Carga por USB"],
-   specs:{autonomia:90, carga:null, peines:null, longitudes:"1-7 mm", agua:null}},
-  {id:"oneblade-360", nombre:"Philips OneBlade 360", categoria:"Afeitado", asin:"B0CQHW6YD8", imagen:"",
-   ideal:"Recortar, perfilar y afeitar con un solo aparato",
-   puntos:["Cuchilla 360 que se inclina en todas direcciones","Peine 5 en 1 (1-5 mm)","Sirve también para el cuerpo"],
-   specs:{autonomia:null, carga:null, peines:null, longitudes:"1-5 mm", agua:null}},
-  {id:"gillette-kit", nombre:"King C. Gillette Kit Barba Rutina Perfecta", categoria:"Cuidado", asin:"B0FQ5Q4NDY", imagen:"",
-   ideal:"Regalo o cuidado diario de la barba",
-   puntos:["Jabón 3 en 1, suavizante, aceite y crema","Para barba corta o larga"],
-   specs:{autonomia:null, carga:null, peines:null, longitudes:null, agua:null}},
-];
-
-/* Filas del comparador. mejor: "max" = gana el número más alto, "min" = el más bajo */
-const FILAS = [
-  {k:"categoria", t:"Tipo", f:p=>p.categoria},
-  {k:"ideal", t:"Ideal para", f:p=>p.ideal||"—"},
-  {k:"autonomia", t:"Autonomía", f:p=>s(p,"autonomia")==null?"—":s(p,"autonomia")+" min", v:p=>s(p,"autonomia"), mejor:"max"},
-  {k:"carga", t:"Tiempo de carga", f:p=>s(p,"carga")==null?"—":s(p,"carga")+" min", v:p=>s(p,"carga"), mejor:"min"},
-  {k:"peines", t:"Peines guía", f:p=>s(p,"peines")==null?"—":s(p,"peines"), v:p=>s(p,"peines"), mejor:"max"},
-  {k:"longitudes", t:"Longitudes de corte", f:p=>s(p,"longitudes")??"—"},
-  {k:"agua", t:"Resistente al agua", f:p=>s(p,"agua")??"—"},
-];
-
-const ICONOS = {
-  Cortapelos:'<svg viewBox="0 0 64 64" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="14" width="20" height="44" rx="9"/><path d="M20 14h24l-3-8H23z"/><path d="M26 6v-2M32 6v-2M38 6v-2"/><circle cx="32" cy="30" r="3"/></svg>',
-  Barba:'<svg viewBox="0 0 64 64" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 22c0 20 8 34 18 34s18-14 18-34"/><path d="M22 34c4 3 16 3 20 0"/><path d="M14 22c4-8 12-12 18-12s14 4 18 12"/></svg>',
-  Afeitado:'<svg viewBox="0 0 64 64" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="10" width="28" height="16" rx="4"/><path d="M24 26h16v6H24zM28 32h8v24h-8z"/></svg>',
-  Cuidado:'<svg viewBox="0 0 64 64" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M26 8h12v8H26z"/><path d="M24 16h16l4 10v28a4 4 0 0 1-4 4H24a4 4 0 0 1-4-4V26z"/><path d="M26 36h12"/></svg>',
-};
-
-const MAX = 3;
-let filtro = "Todos";
-let seleccion = [];
-
-function s(p,k){return p.specs ? p.specs[k] : null}
-function enlace(p){
-  if(!p.asin) return "#";
-  return "https://www.amazon.es/dp/"+encodeURIComponent(p.asin)+(TAG_AMAZON?"?tag="+encodeURIComponent(TAG_AMAZON):"");
-}
-function botonAmazon(p,estilo){
-  const href = enlace(p);
-  if(href==="#") return `<span class="btn primary" style="opacity:.45;cursor:default;${estilo||""}" title="Enlace pendiente">Ver precio en Amazon</span>`;
-  return `<a class="btn primary" style="${estilo||""}" href="${esc(href)}" target="_blank" rel="nofollow sponsored noopener">Ver precio en Amazon</a>`;
-}
-function byId(id){return PRODUCTOS.find(p=>p.id===id)}
-function esc(t){return String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
-
-function pintarFiltros(){
-  const cats = ["Todos", ...new Set(PRODUCTOS.map(p=>p.categoria))];
-  document.getElementById("filters").innerHTML = cats.map(c=>
-    `<button class="chip" type="button" aria-pressed="${c===filtro}" data-cat="${esc(c)}">${esc(c)}</button>`).join("");
-}
-
-function pintarProductos(){
-  const lista = PRODUCTOS.filter(p=>filtro==="Todos"||p.categoria===filtro);
-  document.getElementById("grid").innerHTML = lista.map(p=>{
-    const on = seleccion.includes(p.id);
-    const img = p.imagen ? `<img src="${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy">` : (ICONOS[p.categoria]||ICONOS.Cuidado);
-    return `<article class="card">
-      <div class="img">${img}${p.ejemplo?'<span class="sample">Ejemplo</span>':''}</div>
-      <div class="body">
-        <span class="cat">${esc(p.categoria)}</span>
-        <h3>${esc(p.nombre)}</h3>
-        <ul>${p.puntos.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
-        ${p.ideal?`<div class="ideal"><b>Ideal para:</b> ${esc(p.ideal)}</div>`:""}
-      </div>
-      <div class="actions">
-        ${botonAmazon(p)}
-        <button class="btn cmp-toggle" type="button" aria-pressed="${on}" data-id="${p.id}">${on?"Quitar":"Comparar"}</button>
-      </div>
-    </article>`;
-  }).join("");
-}
-
-function pintarPickers(){
-  const opts = id => `<option value="">— Elige un producto —</option>` + PRODUCTOS.map(p=>
-    `<option value="${p.id}" ${p.id===id?"selected":""}>${esc(p.nombre)}</option>`).join("");
-  document.getElementById("pickers").innerHTML = [0,1,2].map(i=>
-    `<div><label for="pick${i}">Producto ${i+1}</label><select id="pick${i}" data-i="${i}">${opts(seleccion[i])}</select></div>`).join("");
-}
-
-function pintarTabla(){
-  const ps = seleccion.map(byId).filter(Boolean);
-  const wrap = document.getElementById("tableWrap");
-  document.getElementById("navCount").textContent = ps.length;
-  if(ps.length===0){wrap.innerHTML=`<div class="empty">Pulsa «Comparar» en dos o tres productos, o elígelos arriba.</div>`;return;}
-  const head = `<thead><tr><th scope="col">Característica</th>${ps.map(p=>`<th scope="col">${esc(p.nombre)}</th>`).join("")}</tr></thead>`;
-  const body = FILAS.map(f=>{
-    let best = null;
-    if(f.mejor && ps.length>1){
-      const vals = ps.map(f.v).filter(v=>typeof v==="number");
-      if(vals.length>1){
-        const target = f.mejor==="max"?Math.max(...vals):Math.min(...vals);
-        if(vals.filter(v=>v===target).length < vals.length) best = target;
-      }
-    }
-    return `<tr><th scope="row">${f.t}</th>${ps.map(p=>`<td class="${best!==null&&f.v(p)===best?"best":""}">${esc(f.f(p))}</td>`).join("")}</tr>`;
-  }).join("");
-  const links = `<tr><th scope="row">Comprar</th>${ps.map(p=>`<td>${botonAmazon(p,"padding:8px 14px;font-size:14px")}</td>`).join("")}</tr>`;
-  wrap.innerHTML = `<table>${head}<tbody>${body}${links}</tbody></table>`;
-}
-
-function render(){pintarFiltros();pintarProductos();pintarPickers();pintarTabla();}
-
-document.addEventListener("click",e=>{
-  const chip = e.target.closest(".chip");
-  if(chip){filtro = chip.dataset.cat; pintarFiltros(); pintarProductos(); return;}
-  const t = e.target.closest(".cmp-toggle");
-  if(t){
-    const id = t.dataset.id;
-    if(seleccion.includes(id)) seleccion = seleccion.filter(x=>x!==id);
-    else { if(seleccion.length>=MAX) seleccion.shift(); seleccion.push(id); }
-    pintarProductos(); pintarPickers(); pintarTabla();
-  }
-});
-document.addEventListener("change",e=>{
-  if(e.target.matches("#pickers select")){
-    const i = +e.target.dataset.i, v = e.target.value;
-    const arr = [0,1,2].map(j=>seleccion[j]||"");
-    arr[i] = v;
-    seleccion = arr.filter((x,j,a)=>x && a.indexOf(x)===j);
-    pintarProductos(); pintarPickers(); pintarTabla();
-  }
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-seleccion = ["remington-genius","cecotec-bamba"];
-render();
-</script>
+<div class="cookies" id="aviso-cookies" role="dialog" aria-modal="false" aria-labelledby="cookies-titulo" aria-describedby="cookies-texto" hidden>
+  <div class="container cookies__fila">
+    <div>
+      <p class="cookies__titulo" id="cookies-titulo">Cookies, las justas</p>
+      <p class="cookies__texto" id="cookies-texto">Usamos cookies de analítica para saber qué guías se leen. Solo se activan si aceptas. <a href="/corte-en-casa/cookies/">Más información</a></p>
+    </div>
+    <div class="cookies__botones">
+      <button type="button" class="boton boton--secundario" data-cookies="rechazar">Rechazar</button>
+      <button type="button" class="boton boton--secundario" data-cookies="aceptar">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script src="/corte-en-casa/assets/js/cookies.js" defer></script>
 </body>
 </html>
